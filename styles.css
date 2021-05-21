@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 40px 3.33% 0 3.33%;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-container {
+    height: calc(66.67vh - 77px);
+    margin: 0 3.33% 0 3.33%;
+}
+
+.array-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.array-cell {
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px 5px 5px;
+    background-color: transparent;
+    border: 2px solid black;
+    text-align: center;
+    transition: 0.2s ease-in
+}
+
+.array-cell.touched {
+    background-color: coral;
+    transition: 0.2s ease-in
+}
+
+.settings-container {
+    height: 33.33vh;
+    margin: 0 3.33% 0 3.33%;
+}
+
+.button-container {
+    margin: 10px 0 10px 0;
+}
+
