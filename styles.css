@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;
 }
 
 h1 {
     margin: 40px 3.33% 0 3.33%;
+    text-align: center;
 }
 
 .app-container {
@@ -12,36 +14,99 @@ h1 {
 }
 
 .canvas-container {
-    height: calc(66.67vh - 77px);
-    margin: 0 3.33% 0 3.33%;
+    height: calc(100vh - 320px);
+    margin: 20px 3.33% 0 3.33%;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0px 0px #222222;
 }
 
 .array-visual {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100px;
 }
 
 .array-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
     margin: 5px 5px 5px 5px;
-    background-color: transparent;
+    background-color: white;
     border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 4px 4px 0px 0px #222222;
     text-align: center;
-    transition: 0.2s ease-in
+    transition: all 0.2s ease-in-out;
 }
 
 .array-cell.touched {
     background-color: coral;
-    transition: 0.2s ease-in
+    transform: translateY(-10px);
 }
 
 .settings-container {
-    height: 33.33vh;
-    margin: 0 3.33% 0 3.33%;
+    height: 160px;
+    margin: 20px 3.33% 20px 3.33%;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0px 0px #222222;
+}
+
+.commands {
+    margin: 20px 20px 20px 20px;
 }
 
 .button-container {
-    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 10px 10px;
 }
 
+.insert-container {
+    text-align: center;
+    width: 300px;
+}
+
+#insert-input {
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    text-align: center;
+    font-weight: 600;
+}
+
+#insert-button {
+    width: 100px;
+    height: 30px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid black;
+}
+
+#insert-error {
+    height: 30px;
+}
+
+.remove-container {
+    text-align: center;
+    width: 300px;
+}
+
+#remove-button {
+    width: 100px;
+    height: 30px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid black;
+}
+
+#remove-error {
+    height: 30px;
+}
+
+button {
+    text-decoration: none !important;
+    background: none;
+    box-shadow: 4px 4px #222222;
+}

@@ -17,7 +17,7 @@ export class Heap {
         if (i > 0 && i <= this.items.length) {
             return this.items[i];
         }
-        return null;
+        return undefined;
     }
 
     // sink operation with an optional callback
@@ -26,13 +26,13 @@ export class Heap {
             return;
         }
         visit(i, () => {
-            const curr = get(i);
+            const curr = this.get(i);
             const leftChild  = this.get(2 * i);
             const rightChild = this.get(2 * i + 1);
-            if (leftChild === null && rightChild === null) {
+            if (leftChild === undefined && rightChild === undefined) {
                 return;
             }
-            else if (rightChild === null) {
+            else if (rightChild === undefined) {
                 if (leftChild < curr) {
                     this.swapIndices(i, 2 * i);
                     this.sink(2 * i, visit);
@@ -73,22 +73,19 @@ export class Heap {
 
     insert(value, visit) {
         this.items.push(value);
+        this.swim(this.size(), visit);
+    }
+
+    remove(visit) {
+        const toReturn = this.items[1];
         if (visit === null) {
             return;
         }
-        visit(this.size(), () => {
-            this.swim(this.size(), visit);
+        visit(1, () => {
+            this.swapIndices(1, this.size());
+            this.items.pop();
+            this.sink(1, visit);
         });
-    }
-
-    remove(visit=null) {
-        if (visit === null) {
-            visit(1, () => {
-                this.swapIndices(1, this.size());
-                const toReturn = this.items.pop();
-                this.sink(1, visit);
-            });
-        }
         return toReturn;
     }
 
