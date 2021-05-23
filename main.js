@@ -152,7 +152,6 @@ const drawHeap = (indicatorIndex) => {
 const animateArrayStep = (index, callback) => {
     setupArrayVisual();
     drawHeap(index);
-    console.log(heap);
     const cell = document.getElementById(`cell-${index}`);
     setTimeout(() => {
         if (cell) {
